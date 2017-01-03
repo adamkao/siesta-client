@@ -658,6 +658,11 @@ function done() {
 	}
 }
 
+function test() {
+	$.get( "http://localhost/cgi-bin/siesta-server.exe", function( data ) {
+		alert( data );
+	});
+}
 function firstmousemove( e ) {
 	var i, j;
 	drawboard();
@@ -708,5 +713,8 @@ $( document ).ready( function() {
 	$( '#board' ).mousemove( firstmousemove );
 	$( '#board' ).click( firstclick );
 	$( '#board' ).mouseleave( updatedisplay );
+		$( '#undo' ).click( undo );
+		$( '#done' ).click( done );
+		$( '#test' ).click( test );
 	updatedisplay();
 });
